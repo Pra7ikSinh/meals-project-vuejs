@@ -1,6 +1,6 @@
 /**
- * Export all objects using export default
+ * store states
  */
 export default {
-    
+    searchedMeals: [],
 }

@@ -5,10 +5,14 @@ import Header from './layouts/header.vue';
 </script>
 
 <template>
+  <!-- Header Section -->
   <Header></Header>
-  <RouterView></RouterView>
+
+  <!-- Main Section -->
+  <main>
+    <RouterView></RouterView>
+  </main>
+
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

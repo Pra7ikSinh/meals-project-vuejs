@@ -4,11 +4,9 @@
 
 <template>
     <div>
-        {{  }}
-        Meal List
+        {{ }}
+        Search By Ingredients
     </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
