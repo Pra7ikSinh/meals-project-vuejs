@@ -5,10 +5,10 @@ import axiosClient from "../config/axiosClient";
  * @param {*} commit 
  * @param {*} searchedKeyword 
  */
-export function searchMeals({ commit }, searchedKeyword) {
+export function searchMeals(mutation, searchedKeyword) {
     axiosClient.get(`search.php?s=${searchedKeyword}`)
         .then((response) => {
             // call mutation to commit the data into state.
-            commit('setSearchedMeals', response.data);
+            mutation.commit('setSearchedMeals', response.data.meals);
         });
 }
