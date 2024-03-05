@@ -9,8 +9,10 @@ import Header from './layouts/header.vue';
   <Header></Header>
 
   <!-- Main Section -->
-  <main>
-    <RouterView></RouterView>
+  <main class="bg-white">
+    <div class=" rounded-3xl m-5 bg-gray-200">
+      <RouterView></RouterView>
+    </div>
   </main>
 
 </template>
