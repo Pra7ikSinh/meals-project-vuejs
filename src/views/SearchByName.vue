@@ -32,7 +32,9 @@ onMounted(() => {
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 p-8 pt-0">
         <div v-for="meal of meals" :key="meal.idMeal" class="bg-white drop-shadow-md rounded-xl hover:scale-105 hover:shadow-lg">
-            <img class="rounded-t-2xl" :src="meal.strMealThumb" :alt="meal.strMeal + 'image'" />
+            <RouterLink :to="{name: 'meal-details', params: { id: meal.idMeal }}">
+                <img class="rounded-t-2xl" :src="meal.strMealThumb" :alt="meal.strMeal + 'image'" />
+            </RouterLink>
             <div class="px-2 pt-2">
                 <h3 class="p-2 font-semibold">{{ meal.strMeal }}</h3>
                 <p class="mb-5"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi adipisci illum molestiae, ipsa saepe, perferendis vitae at eum voluptates minus veniam dicta unde, omnis cupiditate velit neque officia aperiam. Ad.</p>

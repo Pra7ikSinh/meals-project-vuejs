@@ -3,6 +3,18 @@
  * @param {*} state 
  * @param {*} meals 
  */
-export function setSearchedMeals(state, meals) {
+function setSearchedMeals(state, meals) {
     state.searchedMeals = meals;
+}
+
+function setMealByID(state, meals) {
+    state.mealByID = meals;
+}
+
+/**
+ * Export mutations
+ */
+export { 
+    setSearchedMeals, 
+    setMealByID,
 }

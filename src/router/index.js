@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import SearchByIngredients from '../views/SearchByIngredients.vue';
 import SearchByLetter from '../views/SearchByLetter.vue';
 import SearchByName from '../views/SearchByName.vue';
+import MealDetails from '../views/MealDetails.vue';
 
 /** 
  * Define Routes 
@@ -28,6 +29,11 @@ const routes = [
         path: '/search-by-name/:name?',
         name: 'search-by-name',
         component: SearchByName,
+    },
+    {
+        path: '/meal/:id?',
+        name: 'meal-details',
+        component: MealDetails,
     },
 ];
 
