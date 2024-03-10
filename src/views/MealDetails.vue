@@ -2,6 +2,8 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, RouterLink } from 'vue-router';
 import store from '../store';
+import YoutubeButton from '../components/YoutubeButton.vue';
+import ViewOriginalSourceButton from '../components/ViewOriginalSourceButton.vue';
 
 
 const meal = computed(() => store.state.mealByID);
@@ -83,12 +85,12 @@ function getMealByID() {
                 </div>
             </div>
             <hr class="m-5">
-            <div class="pb-2 flex gap-5 sm:flex-row md:flex-row flex-col">
-                <a :href="meal.strYoutube" target="_blank" class=" text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-2xl px-5 py-2.5 text-center me-2 mb-2">YouTube</a>
-                <a :href="meal.strSource" target="_blank" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-2xl px-5 py-2.5 text-center me-2 mb-2">View Original Source</a>
+            <div class="pb-2 m-2 flex gap-5 sm:flex-row md:flex-row flex-col">
+                <YoutubeButton :youtubeLink="meal.strYoutube" ></YoutubeButton>
+                <ViewOriginalSourceButton :sourceLink="meal.strSource"></ViewOriginalSourceButton>
             </div>
         </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped></style>../components/YoutubeButton.vue

@@ -2,6 +2,8 @@
 import { computed, onMounted, ref } from 'vue';
 import store from '../store';
 import { RouterLink, useRoute } from 'vue-router';
+import YoutubeButton from '../components/YoutubeButton.vue';
+import ViewOriginalSourceButton from '../components/ViewOriginalSourceButton.vue';
 
 const searchedKeyword = ref('');
 const meals = computed(() => store.state.searchedMeals);
@@ -36,13 +38,11 @@ onMounted(() => {
                 <img class="rounded-t-2xl" :src="meal.strMealThumb" :alt="meal.strMeal + 'image'" />
             </RouterLink>
             <div class="px-2 pt-2">
-                <h3 class="p-2 font-semibold">{{ meal.strMeal }}</h3>
+                <div><h3 class="p-2 font-semibold">{{ meal.strMeal }}</h3></div> 
                 <!-- <p class="mb-5">{{ meal.strInstructions }}</p> -->
-                <div class="pb-2 m-2">
-                    <a :href="meal.strYoutube" target="_blank" class=" text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">YouTube</a>
-                    <RouterLink to="/" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                        View
-                    </RouterLink>
+                <div class="pb-2 mt-2 flex flex-row sm:flex-row md:flex-col justify-start align-middle items-start">
+                    <YoutubeButton :youtubeLink="meal.strYoutube" ></YoutubeButton>
+                    <ViewOriginalSourceButton :sourceLink="meal.strSource"></ViewOriginalSourceButton>
                 </div>
             </div>
         </div>
