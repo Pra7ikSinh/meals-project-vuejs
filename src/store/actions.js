@@ -15,15 +15,29 @@ function searchMeals(mutation, searchedKeyword) {
 
 /**
  * getMealByID - get meal by id
-* @param {*} mutation 
- * @param {*} mealID  */
+ * @param {*} mutation 
+ * @param {*} mealID  
+ */
 function getMealByID(mutation, mealID) {
     axiosClient.get(`lookup.php?i=  ${mealID}`)
         .then((response) => {
             mutation.commit('setMealByID', (response.data.meals) !== null ? response.data.meals[0] : {});
         })
 }
+
+/**
+ * getMealByLetter - get meals by letter
+ * @param {*} mutation 
+ * @param {*} mealByLetter  
+ */
+function getMealByLetter(mutation,mealByLetter){
+    axiosClient.get(`search.php?f=${mealByLetter}`)
+                .then((response)=>{
+                    mutation.commit('setMealByLetter', response.data.meals);
+                })
+}
+
 /**
  * Export functions
  */
-export { searchMeals, getMealByID }
+export { searchMeals, getMealByID, getMealByLetter}

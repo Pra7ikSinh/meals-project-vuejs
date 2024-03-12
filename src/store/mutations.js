@@ -11,10 +11,15 @@ function setMealByID(state, meals) {
     state.mealByID = meals;
 }
 
+function setMealByLetter(state, meals) {
+    state.mealByLetter = meals;
+}
+
 /**
  * Export mutations
  */
 export { 
     setSearchedMeals, 
     setMealByID,
+    setMealByLetter,
 }

@@ -77,6 +77,7 @@ function getMealByID() {
                     <h1 class="font-bold text-2xl text-cyan-500">Measures</h1>
                     <ul>
                         <template v-for="(element, index) of new Array(20)" >
+                            {{ meal[`strMeasure${index+1}`] !== '' }}
                             <li v-if="meal[`strMeasure${index+1}`] !== ''" class="text-lg">
                                 {{ index+1}}: {{ meal[`strMeasure${index+1}`] }}
                             </li>
