@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '../views/Home.vue';
-import SearchByIngredients from '../views/SearchByIngredients.vue';
-import SearchByLetter from '../views/SearchByLetter.vue';
-import SearchByName from '../views/SearchByName.vue';
+import MealsByIngredients from '../views/MealsByIngredients.vue';
+import MealsByLetter from '../views/MealsByLetter.vue';
+import MealsByName from '../views/MealsByName.vue';
 import MealDetails from '../views/MealDetails.vue';
 
 /** 
@@ -18,17 +18,17 @@ const routes = [
     {
         path: '/search-by-ingredients/:ingredients?',
         name: 'search-by-ingredients',
-        component: SearchByIngredients,
+        component: MealsByIngredients,
     },
     {
         path: '/search-by-letter/:letter?',
         name: 'search-by-letter',
-        component: SearchByLetter,
+        component: MealsByLetter,
     },
     {
         path: '/search-by-name/:name?',
         name: 'search-by-name',
-        component: SearchByName,
+        component: MealsByName,
     },
     {
         path: '/meal/:id?',
