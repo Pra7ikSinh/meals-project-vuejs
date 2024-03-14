@@ -13,9 +13,9 @@ onMounted(()=>{
 </script>
 
 <template>
-    <div>
-        {{ }}
-        Search By Ingredients
+     <div class="pt-8 mx-8 font-extrabold flex gap-3">
+        <img class="" src="../assets/Icons/search.svg" alt="" />
+        Search By Name
     </div>
 </template>
 

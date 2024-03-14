@@ -28,7 +28,7 @@ onMounted(() => {
 <template>
     <div class="pt-8 mx-8 font-extrabold flex gap-3">
         <img class="" src="../assets/Icons/search.svg" alt="" />
-        Search By Name
+        Search
     </div>
     <div class="flex p-8 pt-2 justify-center">
         <input type="text" class="rounded border-2 border-gray-200 w-full" v-model="searchedKeyword" placeholder="Search for Meals" @change="searchByName" />
