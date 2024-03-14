@@ -27,10 +27,12 @@ function getMealByID() {
     store.dispatch('getMealByID', mealID.value);
 }
 
+console.log(meal.value)
 </script>
 
 <template>
     <div class="p-10">
+        {{ meal }}
         <div class="rounded-2xl bg-white p-5 pt-10">
             <div class="flex justify-center">
                 <img :src="meal.strMealThumb" :alt="meal.strMeal" class="rounded-xl">
@@ -66,7 +68,7 @@ function getMealByID() {
                     <h1 class="font-bold text-2xl text-cyan-500">Ingredients</h1>
                     <ul>
                         <template v-for="(element, index) of new Array(20)" >
-                            <li v-if="meal[`strIngredient${index+1}`] !== ''" class="text-lg">
+                            <li v-if="meal[`strIngredient${index+1}`] && meal[`strIngredient${index+1}`].trim()" class="text-lg">
                                 {{ index+1}}: {{ meal[`strIngredient${index+1}`] }}
                             </li>
                         </template>
@@ -77,8 +79,7 @@ function getMealByID() {
                     <h1 class="font-bold text-2xl text-cyan-500">Measures</h1>
                     <ul>
                         <template v-for="(element, index) of new Array(20)" >
-                            {{ meal[`strMeasure${index+1}`] !== '' }}
-                            <li v-if="meal[`strMeasure${index+1}`] !== ''" class="text-lg">
+                            <li v-if="meal[`strMeasure${index+1}`] && meal[`strMeasure${index+1}`].trim()" class="text-lg">
                                 {{ index+1}}: {{ meal[`strMeasure${index+1}`] }}
                             </li>
                         </template>
