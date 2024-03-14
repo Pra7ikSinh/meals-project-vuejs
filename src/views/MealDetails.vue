@@ -27,12 +27,10 @@ function getMealByID() {
     store.dispatch('getMealByID', mealID.value);
 }
 
-console.log(meal.value)
 </script>
 
 <template>
     <div class="p-10">
-        {{ meal }}
         <div class="rounded-2xl bg-white p-5 pt-10">
             <div class="flex justify-center">
                 <img :src="meal.strMealThumb" :alt="meal.strMeal" class="rounded-xl">
